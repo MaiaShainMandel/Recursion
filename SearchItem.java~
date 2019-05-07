@@ -1,0 +1,32 @@
+/* The SearchItem class will make a method that will 
+ * show the proper use of recursion methods by searches for an object within a
+ * comparable array and return true if it finds one - otherwise returning false.
+ *
+ * @author Maia Mandel
+ * @version 1 2019.04.15
+ */
+import java.util.Arrays;
+public class SearchItem
+{
+ 
+/* searchItem () stores a single string input until a period is entered.
+     *  Variables
+     * <b>n</b> int that will have its numbers reversed*/
+
+    private static boolean searchItem (Comparable[]arr1, Comparable e)
+    {
+ if (arr1.length >0)
+ {
+     Comparable [] arr2 = new Comparable [arr1.length-1];
+     System.arraycopy (arr1, 1, arr2, 0, arr1.length-1);
+     return arr1[0].compareTo (e) == 0 || searchItem (arr2, e);
+ }
+ return false;
+    }
+
+/*The main method actually runs the program.*/
+    public static void main (String [] args)
+    {
+ System.out.println (SearchItem.searchItem (new Integer [] {7, 2, 3}, 2) );
+    }
+} // SearchItem class
